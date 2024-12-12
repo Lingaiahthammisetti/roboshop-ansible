@@ -12,11 +12,6 @@
   - name: create roboshop user
     ansible.builtin.user:
       name: roboshop
-      register: count
-
-  - name: print output count
-    ansible.builtin.debug:
-      msg: "count output: {{count}}"
 
   - name: Recursively remove app directory
     ansible.builtin.file:

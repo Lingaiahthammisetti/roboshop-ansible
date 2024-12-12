@@ -14,6 +14,7 @@
     ansible.builtin.user:
       name: roboshop
      #add condition to check already created user
+
   - name: Recursively remove app directory
     ansible.builtin.file:
       path: /app
