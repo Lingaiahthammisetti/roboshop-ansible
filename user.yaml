@@ -78,5 +78,5 @@
 
   - name: load user data
     ansible.builtin.command: mongosh --host mongodb.lingaiah.online < /app/schema/user.js
-    when: user_count.rc == "0" # keep double quotes
-    #when: user_count.stdout == "-1" 
+    when: user_count.stdout == "4"  # keep double quotes
+   
