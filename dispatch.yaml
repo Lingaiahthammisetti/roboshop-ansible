@@ -1,5 +1,5 @@
 - name: dispatch
-  hosts: localhost
+  hosts: dispatch
   become: yes
   tasks:
 
@@ -34,9 +34,15 @@
       remote_src: yes
 
   - name: Install dependencies
-    ansible.builtin.command: go mod init dispatch; go get; go build
+    ansible.builtin.command: go mod init dispatch;
     args:
       chdir: /app
+
+  - name: Install dependencies
+    ansible.builtin.command: go get; go build
+
+  - name: Install dependencies
+    ansible.builtin.command: go build
 
   - name: Copy dispatch service
     ansible.builtin.copy:
