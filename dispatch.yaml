@@ -1,5 +1,6 @@
 - name: dispatch
-  hosts: dispatch
+  hosts: localhost
+  #hosts: dispatch
   become: yes
   tasks:
 
