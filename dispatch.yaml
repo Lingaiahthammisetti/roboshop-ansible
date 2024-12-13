@@ -40,7 +40,7 @@
       chdir: /app
 
   - name: Install dependencies - get
-    ansible.builtin.command: go get
+    ansible.builtin.command: go install 
 
   - name: Install dependencies - build
     ansible.builtin.command: go build
