@@ -33,16 +33,10 @@
       dest: /app
       remote_src: yes
 
-  - name: Install dependencies - init
-    ansible.builtin.command: go mod init dispatch
+  - name: Install dependencies
+    ansible.builtin.command: go mod init dispatch; go get; go build
     args:
       chdir: /app
-
-  - name: Install dependencies - get
-    ansible.builtin.command: go install 
-
-  - name: Install dependencies - build
-    ansible.builtin.command: go build
 
   - name: Copy dispatch service
     ansible.builtin.copy:
