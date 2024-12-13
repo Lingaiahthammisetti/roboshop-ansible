@@ -62,7 +62,7 @@
       state: present
 
   - name: get the users count
-    ansible.builtin.command:  mongosh --host mongodb.lingaiah.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
+    ansible.builtin.command:  mongosh --host mongodb.lingaiah.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.countDocuments()'
     register: user_count
 
   - name: print the count
